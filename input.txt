@@ -1,0 +1,29 @@
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+------------+
+| Domain | Method   | URI                    | Name             | Action                                                                 | Middleware |
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+------------+
+|        | GET|HEAD | /                      |                  | Closure                                                                | web        |
+|        | GET|HEAD | admin/content/list     |                  | App\Http\Controllers\Package\ContentController@downloadContent         | web        |
+|        | GET|HEAD | admin/content/them     |                  | App\Http\Controllers\Package\ContentController@getLinkContent          | web        |
+|        | POST     | admin/content/them     |                  | App\Http\Controllers\Package\ContentController@addNewContent           | web        |
+|        | GET|HEAD | admin/oculus/list      |                  | App\Http\Controllers\Package\OculusController@index                    | web        |
+|        | GET|HEAD | admin/oculus/them      |                  | App\Http\Controllers\Package\OculusController@getOculus                | web        |
+|        | POST     | admin/oculus/them      |                  | App\Http\Controllers\Package\OculusController@addNewOculus             | web        |
+|        | GET|HEAD | admin/theme/list       |                  | App\Http\Controllers\Package\ThemeController@index                     | web        |
+|        | POST     | admin/theme/them       |                  | App\Http\Controllers\Package\ThemeController@addNewTheme               | web        |
+|        | GET|HEAD | admin/theme/them       |                  | App\Http\Controllers\Package\ThemeController@getLinkTheme              | web        |
+|        | GET|HEAD | api/content/list       |                  | App\Http\Controllers\Package\ContentController@api_Content             | api        |
+|        | GET|HEAD | api/list               |                  | App\Http\Controllers\Package\ContentController@api_Content             | api        |
+|        | POST     | api/user/login         |                  | App\Http\Controllers\AuthController@login                              | api        |
+|        | POST     | api/user/register      |                  | App\Http\Controllers\AuthController@registry                           | api        |
+|        | GET|HEAD | home                   | home             | App\Http\Controllers\HomeController@index                              | web,auth   |
+|        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest  |
+|        | POST     | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest  |
+|        | POST     | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web        |
+|        | GET|HEAD | logs                   |                  | Rap2hpoutre\LaravelLogViewer\LogViewerController@index                 | web        |
+|        | POST     | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest  |
+|        | GET|HEAD | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest  |
+|        | POST     | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest  |
+|        | GET|HEAD | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest  |
+|        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest  |
+|        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest  |
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+------------+
